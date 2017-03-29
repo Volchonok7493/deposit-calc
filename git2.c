@@ -20,3 +20,27 @@ int main()
     }
     return 0;
 }
+float proffit(int vklad, int dni)
+{
+    float cashback = vklad;
+    if (vklad < 100000) {
+        if ((dni > 0) && (dni <= 30))
+            cashback *= 0.9;
+        if ((dni > 30) && (dni <= 120))
+            cashback *= 1.02;
+        if ((dni > 120) && (dni <= 240))
+            cashback *= 1.06;
+        if ((dni > 240) && (dni <= 365))
+            cashback *= 1.12;
+    } else {
+        if ((dni > 0) && (dni <= 30))
+            cashback *= 0.9;
+        if ((dni > 30) && (dni <= 120))
+            cashback *= 1.03;
+        if ((dni > 120) && (dni <= 240))
+            cashback *= 1.08;
+        if ((dni > 240) && (dni <= 365))
+            cashback *= 1.15;
+    }
+    return cashback;
+}
