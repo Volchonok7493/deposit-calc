@@ -1,0 +1,6 @@
+# ignore following files
+
+*.o
+.git2.c.swp
+git2.c~
+#git2.c#
