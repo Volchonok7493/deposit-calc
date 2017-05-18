@@ -1,3 +1,6 @@
-language: c
-script: make and make test
-install: true
+  "language": "c",
+  "script": "make and make test",
+  "install": true,
+  "group": "stable",
+  "dist": "precise",
+  "os": "linux"
