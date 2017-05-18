@@ -1,6 +1,6 @@
-  "language": "c",
-  "script": "make and make test",
-  "install": true,
-  "group": "stable",
-  "dist": "precise",
-  "os": "linux"
+  language: c,
+  script: make and make test,
+  install: true,
+  group: stable,
+  dist: precise",
+  os: linux
