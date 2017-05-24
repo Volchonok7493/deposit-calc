@@ -112,3 +112,10 @@ CTEST(test_241days_sum110000, to_profit)
     int expected = 126499;
     ASSERT_EQUAL(expected, result);
 }
+CTEST(test_float_one, dop)
+{
+    float result = dop (10);
+
+    float expected = 1;
+    ASSERT_EQUAL(expected, result);
+}

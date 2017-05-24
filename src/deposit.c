@@ -39,3 +39,10 @@ float profit(int x, int z)
     return cashback;
 }
 
+float dop(n){
+	double x=0;
+(int i=0; i<n; i++)
+	x+=0.1;	
+	printf("%f"x);
+}
+
