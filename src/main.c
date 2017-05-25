@@ -3,7 +3,7 @@
 
 int main()
 {
-    int s, t;
+  int s, t;
     printf("enter time to deposit: \n");
     scanf("%i", &t);
     printf("enter sum to deposit: \n");
@@ -17,7 +17,7 @@ int main()
     }
     printf("Doxod: ");
     printf("%0.2f", profit(s, t) - s);
-    printf("%.0f", profit());
+    // printf("%.0f", profit());
 }
        
 
