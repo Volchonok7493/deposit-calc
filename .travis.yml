@@ -1,59 +1,35 @@
-  language: c
-  script: make & make test
-  install: true
-  group: stable
-  dist: precise
-  os: linux
+sudo: true
 
-Language: C
-#AlignAfterOpenBracket: DontAlign 
-#AlignConsecutiveAssignments: false 
-#AlignConsecutiveDeclarations: false 
-AlignEscapedNewlinesLeft: false 
-#AlignOperands:false 
-#AlignTrailingComments: false 
-#AllowAllParametersOfDeclarationOnNextLine: true 
-AllowShortBlocksOnASingleLine: false 
-#AllowShortCaseLabelsOnASingleLine: false 
-AllowShortFunctionsOnASingleLine: None 
-AllowShortIfStatementsOnASingleLine: false 
-AllowShortLoopsOnASingleLine: false 
-#AlwaysBreakAfterDefinitionReturnType: None 
-#AlwaysBreakAfterReturnType:None 
-#AlwaysBreakBeforeMultilineStrings:false 
-#BinPackArguments: false 
-BinPackParameters: false 
-#BreakBeforeBinaryOperators: All 
-BreakBeforeBraces: Linux 
-BreakBeforeTernaryOperators: true 
-ColumnLimit: 80 
-ContinuationIndentWidth: 8 
-DerivePointerAlignment: false 
-IndentCaseLabels: false 
-IndentWidth: 4 
-IndentWrappedFunctionNames: false 
-KeepEmptyLinesAtTheStartOfBlocks: false 
-#MacroBlockBegin: '' 
-#MacroBlockEnd: '' 
-MaxEmptyLinesToKeep: 1 
-PenaltyBreakBeforeFirstCallParameter: 19 
-PenaltyBreakComment: 300 
-PenaltyBreakFirstLessLess: 120 
-PenaltyBreakString: 1000 
-PenaltyExcessCharacter: 1000000 
-PenaltyReturnTypeOnItsOwnLine: 60 
-PointerAlignment: Right 
-#ReflowComments: true 
-#SortIncludes: true 
-#SpaceAfterCStyleCast: false 
-SpaceBeforeAssignmentOperators: true 
-SpaceBeforeParens: ControlStatements 
-SpaceInEmptyParentheses: false 
-SpacesBeforeTrailingComments: 1 
-SpacesInContainerLiterals: true 
-SpacesInCStyleCastParentheses: false 
-SpacesInParentheses: false 
-#SpacesInSquareBrackets: false 
-Standard: Cpp11 
-TabWidth: 4 
-UseTab: Never
+before_install:
+  - sudo add-apt-repository -y ppa:lyx-devel/release
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get install -qq lyx
+  - sudo apt-get install -qq texlive
+  #- sudo apt-get install -qq texlive*
+  #- sudo apt-get install -qq texlive-latex-extra
+  #- sudo apt-get install -qq texlive-fonts-extra
+  - sudo apt-get install -qq pgf
+  - sudo apt-get install -qq graphviz
+  - sudo apt-get install -qq qtikz
+  #- sudo apt-get install -qq tlmgr
+  #- sudo tlmgr pgf ms
+
+script:
+  - ./download_other_githubs
+  # - kpsewhich tkz-graph.sty
+  # - ./build_pdf.sh
+
+after_script:
+  # - ls
+  # - kpsewhich tkz-graph.sty
+
+
+
+after_success:
+  - echo "success"
+ 
+after_failure:
+  - echo "failure"
+  - kpsewhich tkz-graph.sty
