@@ -10,10 +10,3 @@
     - 5.6
     - 7.0
 
-  before_script:
-    - composer global require fabpot/c-cs-fixer
-    - composer install --dev
-
-  script:
-     - phpunit
-     - c c-cs-fixer --diff --dry-run -v fix .
