@@ -5,7 +5,7 @@
   dist: precise
   os: linux
 
-Language: Cpp 
+Language: C
 #AlignAfterOpenBracket: DontAlign 
 #AlignConsecutiveAssignments: false 
 #AlignConsecutiveDeclarations: false 
